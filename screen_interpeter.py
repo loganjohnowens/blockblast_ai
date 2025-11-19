@@ -93,9 +93,6 @@ def get_game_state():
                 except IndexError:
                     print(f"Pixel at ({x}, {y}) is out of bounds.")
 
-            # Print the game state in an 8x8 grid
-            for i in range(0, len(game_state), 8):
-                print(' '.join(game_state[i:i+8]))
 
         except Exception as e:
             print(f"An error occurred while processing the image: {e}")
@@ -385,7 +382,7 @@ def get_peices(peace_locatoins, slot):
             print(peaces)
             print('unknown slot 1')
             slot_1 = 'unknown'
-        print(slot_1)
+        print(f'slot 1 is a {slot_1}')
     if slot == 2:
         if peaces == ['b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b']:
             slot_2 = 'no block in slot 2'
@@ -438,7 +435,7 @@ def get_peices(peace_locatoins, slot):
         else:
             print(peaces)
             slot_2 = 'unknown slot 2'
-        print(slot_2)
+        print(f'slot 2 is a {slot_2}')
     if slot == 3:
         if peaces == ['b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b']:
             slot_3 = 'no block in slot 3'
@@ -492,7 +489,7 @@ def get_peices(peace_locatoins, slot):
             print('unknown slot 3')
             print(peaces)
             slot_3 = 'unknown'
-        print(slot_3)
+        print(f'slot 3 is a {slot_3}')
 
 
 def AI():
@@ -507,3 +504,6 @@ def exe_interpreter():
     get_peices(peace_slot_1, 1)
     get_peices(peace_slot_2, 2)
     get_peices(peace_slot_3, 3)
+    return [slot_1, slot_2, slot_3, game_state]
+
+
